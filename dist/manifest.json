@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "C19-Search!",
+  "name": "ChromiesAPP",
   "version": "0.1.0",
   "permissions": [
     "<all_urls>",
@@ -8,18 +8,5 @@
   ],
   "browser_action": {
     "default_popup": "index.html"
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://*/*"],
-      "run_at": "document_idle",
-      "css": ["./contentStyles.css"],
-      "js": ["./content.js"]
-    }
-  ],
-  "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
   }
 }

@@ -3,22 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
     <title>Login Form</title>
   </head>
   <body>
     <div class="hero">
       <div class="form-box">
         <div class="button-box">
-          <div id="btn"></div>
-          <button type="button" class="toggle-btn" onclick="login()">
+          <div id="btnBackdrop"></div>
+          <button id="loginBtn" type="button" class="toggle-btn">
             Log In
           </button>
-          <button type="button" class="toggle-btn" onclick="register()">
+          <button id="registerBtn" type="button" class="toggle-btn">
             Register
           </button>
         </div>
-        <form class="input-group" id="login">
+        <form class="input-group" id="loginForm">
           <input type="text" class="input-field" placeholder="Email" required />
           <input
             type="text"
@@ -26,12 +25,11 @@
             placeholder="Password"
             required
           />
-          <input type="checkbox" class="check-box" /><span
-            >Remember Password</span
-          >
+          <input type="checkbox" class="check-box" />
+          <span>Remember Password</span>
           <button type="submit" class="submit-btn">Log In</button>
         </form>
-        <form class="input-group" id="register">
+        <form class="input-group" id="registerForm">
           <input type="text" class="input-field" placeholder="Email" required />
           <input
             type="text"
@@ -39,29 +37,11 @@
             placeholder="Password"
             required
           />
-          <input type="checkbox" class="check-box" /><span
-            >I agree to the terms and conditions</span
-          >
+          <input type="checkbox" class="check-box" />
+          <span>I agree to the terms and conditions</span>
           <button type="submit" class="submit-btn">Register</button>
         </form>
       </div>
     </div>
-    <script>
-      let x = document.getElementById("login");
-      let y = document.getElementById("register");
-      let z = document.getElementById("btn");
-
-      function register() {
-        x.style.left = "-400px";
-        y.style.left = "50px";
-        z.style.left = "100px";
-      }
-
-      function login() {
-        x.style.left = "50px";
-        y.style.left = "450px";
-        z.style.left = "0";
-      }
-    </script>
   </body>
 </html>

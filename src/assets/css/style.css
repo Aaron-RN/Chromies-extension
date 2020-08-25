@@ -1,8 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+  
 body {
   background-color: #fff;
   font-family: sans-serif;
-  width: 300px;
-  height: 350px;
+  width: 350px;
+  height: 380px;
 }
 
 .hero {
@@ -14,11 +20,12 @@ body {
 }
 
 .form-box {
+  color: #333;
   width: 350px;
-  height: 350px;
+  height: 380px;
   position: relative;
-  margin: 0 auto;
-  background: #fff;
+  margin: 6% auto;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), #eee, rgba(255, 255, 255, 0.4));
   padding: 5px;
   overflow: hidden;
 }
@@ -39,7 +46,7 @@ body {
   position: relative;
 }
 
-#btn {
+#btnBackdrop {
   top: 0;
   left: 0;
   position: absolute;
@@ -90,24 +97,10 @@ span {
   position: absolute;
 }
 
-#login {
-  left: 10px;
+#loginForm {
+  left: 50px;
 }
 
-#register {
+#registerForm {
   left: 450px;
-}
-
-.flex-row {
-  align-items: center;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.flex-row div {
-  margin-right: 5px;
-}
-
-.hidden {
-  display: none;
 }
