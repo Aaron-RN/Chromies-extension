@@ -3,35 +3,32 @@ import axios from 'axios';
 const baseURL = 'https://blooming-inlet-46820.herokuapp.com';
 // const baseURL = "https://weather-app-2-272202.ew.r.appspot.com";
 
-export const signUpUserWithUsername = async (username) => await axios.post(`${baseURL}/users/register`, {
-  name: username,
-});
+const registerUser = async (username) => (
+  axios.post(`${baseURL}/users/register`, { name: username })
+);
 
-export const loginUser = async (username) => await axios.post(`${baseURL}/users/login`, {
-  name: username,
-});
+const loginUser = async (username) => (
+  axios.post(`${baseURL}/users/login`, { name: username })
+);
 
 // endpoint for creating only plain text notes
-export const createPlainTextNote = async (pageLink, userID, body) => await axios.post(`${baseURL}/notes/upload/text`, {
-  pageLink,
-  userID,
-  body,
-});
+const addBasicNote = async (pageLink, body, userID) => (
+  axios.post(`${baseURL}/notes/upload/text`,
+    {
+      pageLink,
+      body,
+      userID,
+    })
+);
 
 // this endpoint can detect the type of media uploaded
 // if the media is an img, the videoLink will be an empty string
 // if the media is a video, the imgLink will be an empty string
-export const createNoteWithMedia = async (
-  pageLink,
-  userID,
-  body,
-  file,
-  videoTimeStamp,
-) => {
+const addMediaNote = async (pageLink, userID, body, file, videoTimeStamp) => {
   const formData = new FormData();
   formData.append('file', file, file.name);
 
-  const data = axios(
+  const data = await axios(
     {
       method: 'post',
       url: `${baseURL}/notes/upload/media`,
@@ -53,4 +50,8 @@ export const createNoteWithMedia = async (
   return data;
 };
 
-export const getNotesForUser = async (userID) => await axios.get(`${baseURL}/notes/users/${userID}`);
+const getNotesForUser = async (userID) => axios.get(`${baseURL}/notes/users/${userID}`);
+
+export {
+  registerUser, loginUser, addBasicNote, addMediaNote, getNotesForUser,
+};
