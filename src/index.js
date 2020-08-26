@@ -1,21 +1,24 @@
+import {  } from './services/services';
 import './assets/css/style.css';
 
-const x = document.getElementById("loginForm");
-const y = document.getElementById("registerForm");
-const z = document.getElementById("btnBackdrop");
-const btnLogin = document.getElementById("loginBtn");
-const btnRegister = document.getElementById("registerBtn");
+const loginForm = document.getElementById('loginForm');
+const registerForm = document.getElementById('registerForm');
+const btnBackdrop = document.getElementById('btnBackdrop');
+const btnLogin = document.getElementById('loginBtn');
+const btnRegister = document.getElementById('registerBtn');
 
-btnRegister.addEventListener("click", () => {
-    x.style.left = "-400px";
-    y.style.left = "50px";
-    z.style.left = "100px";
-  }
-);
+btnRegister.addEventListener('click', () => {
+  loginForm.style.left = '-400px';
+  registerForm.style.left = '50px';
+  btnBackdrop.style.left = '100px';
+});
 
-btnLogin.addEventListener("click", () => {
-    x.style.left = "50px";
-    y.style.left = "450px";
-    z.style.left = "0";
-  }
-);
+btnLogin.addEventListener('click', () => {
+  loginForm.style.left = '50px';
+  registerForm.style.left = '450px';
+  btnBackdrop.style.left = '0';
+});
+
+loginForm.addEventListener('submit', () => {
+
+});
