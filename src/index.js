@@ -22,6 +22,7 @@ btnLogin.addEventListener('click', () => {
   btnBackdrop.style.left = '0';
 });
 
+// localStorage.removeItem('ChromieUserID');
 // Auto log user in if session still exists
 const userID = localStorage.getItem('ChromieUserID');
 if (userID) window.location.href = './dashboard.html';
