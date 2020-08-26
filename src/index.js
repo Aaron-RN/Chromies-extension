@@ -22,8 +22,9 @@ btnLogin.addEventListener('click', () => {
   btnBackdrop.style.left = '0';
 });
 
-const userID = sessionStorage.getItem('ChromieUserID');
-if (userID) window.location.href = './dashboard.html';
+// Auto log user in if session still exists
+// const userID = sessionStorage.getItem('ChromieUserID');
+// if (userID) window.location.href = './dashboard.html';
 
 // login form onSubmit Event listener
 loginForm.addEventListener('submit', async (e) => {
