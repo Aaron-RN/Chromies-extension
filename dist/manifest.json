@@ -2,10 +2,8 @@
   "manifest_version": 2,
   "name": "ChromiesAPP",
   "version": "0.1.0",
-  "permissions": [
-    "<all_urls>",
-    "storage"
-  ],
+  "permissions": ["storage","activeTab","declarativeContent"],
+
   "browser_action": {
     "default_popup": "index.html"
   }

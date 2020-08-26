@@ -24,7 +24,6 @@ btnLogin.addEventListener('click', () => {
 
 // Auto log user in if session still exists
 const userID = localStorage.getItem('ChromieUserID');
-console.log(userID);
 if (userID) window.location.href = './dashboard.html';
 
 // login form onSubmit Event listener
