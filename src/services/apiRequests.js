@@ -51,8 +51,13 @@ const addMediaNote = async (pageLink, userID, body, file, videoTimeStamp) => {
   return data;
 };
 
-const getNotesForUser = async (userID) => axios.get(`${baseURL}/notes/users/${userID}`);
+// Grabs all notes for user with given userID and pageLink(optional)
+const getUserNotes = async (userID, pageLink) => (
+  axios.get(`${baseURL}/notes/users/${userID}`, { pageLink })
+    .then(res => res)
+    .catch(err => err.response)
+);
 
 export {
-  registerUser, loginUser, addBasicNote, addMediaNote, getNotesForUser,
+  registerUser, loginUser, addBasicNote, addMediaNote, getUserNotes,
 };

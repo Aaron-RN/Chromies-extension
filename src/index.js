@@ -29,6 +29,7 @@ loginForm.addEventListener('submit', async (e) => {
     errorsDiv.textContent = '';
     // eslint-disable-next-line no-underscore-dangle
     sessionStorage.setItem('ChromieUserID', result.data._id);
+    window.location.href = './dashboard.html';
     // sessionStorage.getItem('ChromieUserID');
   } else errorsDiv.textContent = result.data || result.statusText;
 });
@@ -40,6 +41,7 @@ registerForm.addEventListener('submit', async (e) => {
     errorsDiv.textContent = '';
     // eslint-disable-next-line no-underscore-dangle
     sessionStorage.setItem('ChromieUserID', result.data._id);
+    window.location.href = './dashboard.html';
     // sessionStorage.getItem('ChromieUserID');
   } else errorsDiv.textContent = result.data || result.statusText;
 });
