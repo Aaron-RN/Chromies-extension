@@ -29,7 +29,7 @@ const addMediaNote = async (pageLink, userID, body, file, videoTimeStamp) => {
   const formData = new FormData();
   formData.append('file', file, file.name);
 
-  const data = await axios(
+  const result = await axios(
     {
       method: 'post',
       url: `${baseURL}/notes/upload/media`,
@@ -47,8 +47,10 @@ const addMediaNote = async (pageLink, userID, body, file, videoTimeStamp) => {
         'Content-Type': 'multipart/form-data',
       },
     },
-  );
-  return data;
+  ).then(res => res)
+    .catch(err => err.response);
+
+  return result;
 };
 
 // Grabs all notes for user with given userID and pageLink(optional)
