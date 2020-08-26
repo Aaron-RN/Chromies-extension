@@ -22,6 +22,10 @@ btnLogin.addEventListener('click', () => {
   btnBackdrop.style.left = '0';
 });
 
+const userID = sessionStorage.getItem('ChromieUserID');
+if (userID) window.location.href = './dashboard.html';
+
+// login form onSubmit Event listener
 loginForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const result = await loginUser(inputLoginUsername.value);
@@ -34,6 +38,7 @@ loginForm.addEventListener('submit', async (e) => {
   } else errorsDiv.textContent = result.data || result.statusText;
 });
 
+// registration form onSubmit Event listener
 registerForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const result = await registerUser(inputRegisterUsername.value);
