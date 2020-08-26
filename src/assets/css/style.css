@@ -11,6 +11,14 @@ body {
   height: 280px;
 }
 
+.errorsDiv {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  color: #d33636;
+  justify-content: center;
+}
+
 .hero {
   height: 100%;
   width: 100%;
@@ -58,7 +66,7 @@ body {
 }
 
 .input-group {
-  top: 100px;
+  top: 120px;
   position: absolute;
   width: 280px;
   transition: 0.5s;

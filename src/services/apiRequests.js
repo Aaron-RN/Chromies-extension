@@ -5,20 +5,21 @@ const baseURL = 'https://blooming-inlet-46820.herokuapp.com';
 
 const registerUser = async (username) => (
   axios.post(`${baseURL}/users/register`, { name: username })
+    .then(res => res)
+    .catch(err => err.response)
 );
 
 const loginUser = async (username) => (
   axios.post(`${baseURL}/users/login`, { name: username })
+    .then(res => res)
+    .catch(err => err.response)
 );
 
 // endpoint for creating only plain text notes
 const addBasicNote = async (pageLink, body, userID) => (
-  axios.post(`${baseURL}/notes/upload/text`,
-    {
-      pageLink,
-      body,
-      userID,
-    })
+  axios.post(`${baseURL}/notes/upload/text`, { pageLink, body, userID })
+    .then(res => res)
+    .catch(err => err.response)
 );
 
 // this endpoint can detect the type of media uploaded

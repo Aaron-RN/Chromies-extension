@@ -5,6 +5,7 @@ const autoPrefixer = require('autoprefixer');
 module.exports = {
   entry: {
     main: './src/index.js',
+    dashboard: './src/dashboard.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -44,6 +45,15 @@ module.exports = {
       chunks: ['main'],
       template: './src/index.html',
       filename: 'index.html',
+    }),
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      meta: {
+        'theme-color': '#4285f4',
+      },
+      chunks: ['dashboard'],
+      template: './src/dashboard.html',
+      filename: 'dashboard.html',
     }),
   ],
 };
