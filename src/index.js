@@ -23,8 +23,9 @@ btnLogin.addEventListener('click', () => {
 });
 
 // Auto log user in if session still exists
-// const userID = sessionStorage.getItem('ChromieUserID');
-// if (userID) window.location.href = './dashboard.html';
+const userID = localStorage.getItem('ChromieUserID');
+console.log(userID);
+if (userID) window.location.href = './dashboard.html';
 
 // login form onSubmit Event listener
 loginForm.addEventListener('submit', async (e) => {
@@ -33,7 +34,7 @@ loginForm.addEventListener('submit', async (e) => {
   if (result.status === 200) {
     errorsDiv.textContent = '';
     // eslint-disable-next-line no-underscore-dangle
-    sessionStorage.setItem('ChromieUserID', result.data._id);
+    localStorage.setItem('ChromieUserID', result.data._id);
     window.location.href = './dashboard.html';
     // sessionStorage.getItem('ChromieUserID');
   } else errorsDiv.textContent = result.data || result.statusText;
@@ -46,7 +47,7 @@ registerForm.addEventListener('submit', async (e) => {
   if (result.status === 200) {
     errorsDiv.textContent = '';
     // eslint-disable-next-line no-underscore-dangle
-    sessionStorage.setItem('ChromieUserID', result.data._id);
+    localStorage.setItem('ChromieUserID', result.data._id);
     window.location.href = './dashboard.html';
     // sessionStorage.getItem('ChromieUserID');
   } else errorsDiv.textContent = result.data || result.statusText;
